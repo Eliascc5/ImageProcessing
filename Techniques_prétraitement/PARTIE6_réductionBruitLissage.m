@@ -9,8 +9,8 @@ switch (sequence)
   
 case 1
    1
-  savoise = imread('SAVOISE.png'); 
-  savgaus = imread('SAVGAUS.png'); % image savoise + bruit de type "gaussien" 
+  savoise = imread('img/SAVOISE.png'); 
+  savgaus = imread('img/SAVGAUS.png'); % image savoise + bruit de type "gaussien" 
   figure(1),title('Image originale'), imshow(savoise) 
   figure(2),title('Image + bruit gaussien'), imshow(savgaus) 
   %Filtres  3x3  5x5  7x7
@@ -52,8 +52,8 @@ case 1
 case 2 
   %Para reducir el ruido poivre sel debo utilizar un filtro non- lineal (calcula la mediana entre los voisin)
   %Plus grande est la taille du filtre pour attenue est le bruit. Par contre on perdre des details (les coins) les esauinas se curvan
-  savoise  = imread('SAVOISE.png'); 
-  savsap  = imread('SAVSAP.png'); % image savoise + bruit de type "poivre et sel" 
+  savoise  = imread('img/SAVOISE.png'); 
+  savsap  = imread('img/SAVSAP.png'); % image savoise + bruit de type "poivre et sel" 
   figure(1), imshow(savoise) 
   figure(2), imshow(savsap) 
   MED3   = medfilt2(savsap); 
