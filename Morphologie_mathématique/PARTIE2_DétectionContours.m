@@ -1,5 +1,5 @@
 %TP 2 Segmentation  - Morphologie mathématique
-%Partie 2 - Detection de contours
+%Partie 2 - Détection de contours
 
 
 sequence=input('Saisir le seauence: ');
@@ -19,7 +19,7 @@ switch sequence
         %detectar los contornos verticales
         
     case 2
-        I=imread('objects.tif'); 
+        I=imread('img/objects.tif'); 
         figure(1), imshow(I) 
         figure(2), imshow(~edge(I)) %// 'sobel' par défaut 
         figure(3), imshow(~edge(I,'roberts')) 
