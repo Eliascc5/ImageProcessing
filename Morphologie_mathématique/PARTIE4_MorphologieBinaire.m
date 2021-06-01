@@ -32,7 +32,7 @@ case 2   %Ouverture et fermeture
   
   DIL = imdilate(BW,strel('disk',4,0));                %Dilation 
   image_Fermeture = imerode(DIL,strel('disk',4,0));    %Suivie d'une erosion
-  figure(4), imshow(image_Ouveture),title('Image après l''operation de fermeture')
+  figure(4), imshow(image_Fermeture),title('Image après l''operation de fermeture')
    
 otherwise
   disp('Elle n''existe pas')
