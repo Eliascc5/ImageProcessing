@@ -8,7 +8,7 @@ switch morphologie
   #Faire attention à l'element structurant que l'on utilise
   
 case 1   %Erosion et dilatation 
-
+  close all
   BW = imread('img/MORPHO0.TIF');
   figure(1), imshow(BW),title('Image originale');
   
@@ -20,7 +20,7 @@ case 1   %Erosion et dilatation
 case 2   %Ouverture et fermeture
   %Ouverture => erosion suivie d'une dilation
   %Permet d'eliminer le bruit du fond 
-  
+  close all
   BW = imread('img/MORPHO1.TIF'); 
   figure(1), imshow(BW),title('Image originale');
   ER = imerode(BW,strel('disk',4,0));                 %Erosion 
