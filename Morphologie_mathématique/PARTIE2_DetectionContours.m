@@ -29,6 +29,8 @@ switch sequence
         
         %On travaille l'image en niveaux de gris puisque c'est une approche qui trvaille avec l'intesité des pixels
         
+        %imagesc(I) affiche les données du tableau I sous la forme d'une image qui utilise toute la gamme de couleurs de la palette de couleurs. 
+        
   case 2
   
     
