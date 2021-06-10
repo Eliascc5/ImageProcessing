@@ -7,17 +7,27 @@ sequence=input("Saisir la seauence:\n");
 switch sequence
 
     case 1  
-        
+ 
         load trees 
         ImB = ind2gray(X,map);         
-        h  = fspecial('sobel'); % Enlever le ';' afin d'afficher la matrice du filtre 
-        ImF = filter2(h,ImB); 
-        colormap(gray(256)), imagesc(ImF), axis off 
+        noyau_horizontal  = fspecial('sobel')        % Enlever le ';' afin d'afficher la matrice du filtre 
+        noyau_vertical = transpose(noyau_horizontal)
         
-        %Filtre de Sobel pour lea detection de contours horizontaux..
-        %Filtrage et lissage (gaussien)
-        %Podemos jugar cambiando trasponiendo el filtro con h' para
-        %detectar los contornos verticales
+        ImF_h = filter2(noyau_horizontal,ImB);  %On glisse le filtre par l'image afin de detecter les contours horizontaux.
+        ImF_v = filter2(noyau_vertical,ImB);  %On glisse le filtre par l'image afin de detecter les contours verticaux.
+        
+        figure,colormap(gray(256)), imagesc(ImF_h), axis off 
+        figure,colormap(gray(256)), imagesc(ImF_v), axis off 
+        
+        
+        %Filtre de Sobel:
+        %le filtre de sobel se compose d'un lissage gaussien suivi d'une derivation (pour la detection des contours)
+        
+        % [-1 0 1     [1
+        %  -2 0 2   =  2  * [-1 0 +1]   Lissage gaussien + derivation
+        %  -1 0 1]     1]
+        
+        %On travaille l'image en niveaux de gris puisque c'est une approche qui trvaille avec l'intesité des pixels
         
   case 2
   
