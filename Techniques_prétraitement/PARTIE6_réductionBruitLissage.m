@@ -11,11 +11,11 @@ case 1
    1
   savoise = imread('img/SAVOISE.png'); 
   savgaus = imread('img/SAVGAUS.png'); % image savoise + bruit de type "gaussien" 
-  figure(1),title('Image originale'), imshow(savoise) 
+  figure(1), imshow(savoise),title('Image originale')
   figure(2),title('Image + bruit gaussien'), imshow(savgaus) 
   %Filtres  3x3  5x5  7x7
   %Plus on augmente la taille du filtre plus on reduit le bruit mais la zone de transition devient plus large et pourtant l image est plus floue
-  %Pour corriger cq on pourrait faire un rehausement de l image 
+  %Pour corriger ca on pourrait faire un rehausement de l image 
   h3         = fspecial('average')   % �ter le ';' afin d�afficher la matrice du filtre 
   h5         = fspecial('average',5) 
   h7         = fspecial('average',7) 

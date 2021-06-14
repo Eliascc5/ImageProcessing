@@ -33,7 +33,6 @@ switch sequence
         
   case 2
   
-    
         I=imread('img/objects.tif'); 
         figure(1), imshow(I) 
         figure(2), imshow(~edge(I)) %// 'sobel' par defaut 
