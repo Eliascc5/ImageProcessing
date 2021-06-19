@@ -5,8 +5,9 @@ pkg load image
 pkg load signal
 
 #############################
-# Auteurs : Alexandre THEBAUD
+# Auteurs : 
 #           Elias CORREA 
+#           Alexandre THEBAUD
 # MiniProjet 2021
 ############################
 
@@ -17,7 +18,12 @@ pkg load signal
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %On charge l'image
-imgRGB = imread('colindata/09.png');
+
+disp("Saisir l''image: " ); choix=input('','s');
+
+path2img =strcat("colindata/0",choix,".png");
+
+imgRGB = imread(path2img);
 figure,imshow(imgRGB),title('Image originale:');
 %Niveau de gris
 img = rgb2gray(imgRGB); 
